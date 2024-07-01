@@ -1,0 +1,17 @@
+
+
+
+
+.home-img{
+      background-color: #7984ff;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.vehicle-heading{
+    font-size: 20px;
+    font-weight: 500;
+}
