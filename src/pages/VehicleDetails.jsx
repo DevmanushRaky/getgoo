@@ -1,25 +1,19 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaArrowLeftLong } from "react-icons/fa6";
+import { Agency } from './Agency';
+import { ThirdParty } from './ThirdParty';
+import { Self } from './Self';
+import { FaPlus } from "react-icons/fa";
+
 
 const VehicleDetails = () => {
-    const [vehicleData, setVehicleData] = useState({
-        vehicleModel: '',
-        vehicleNumber: '',
-    });
+    const [activeForm, setActiveForm] = useState("agency"); // Default active form
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setVehicleData((prevData) => ({
-            ...prevData,
-            [name]: value,
-        }));
+    const handleFormChange = (formType) => {
+        setActiveForm(formType);
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // handle form submission
-    };
 
     return (
         <>
@@ -27,35 +21,49 @@ const VehicleDetails = () => {
 
                 <div className="d-flex align-items-center mb-4">
                     <NavLink to="/" className=" d-flex justify-content-center text-decoration-none">
-                        <FaArrowLeftLong className='left-arrow mx-2'/>
+                        <FaArrowLeftLong className='left-arrow' />
                     </NavLink>
                     <h1 className="vehicle-heading">Vehicle Information</h1>
                 </div>
-                <form onSubmit={handleSubmit} className="container mt-4">
-                    <div className="mb-3">
-                        <label className="form-label">Vehicle Model</label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            name="vehicleModel"
-                            value={vehicleData.vehicleModel}
-                            onChange={handleChange}
-                        />
+
+                <div className="toggle-forms-container">
+                    <div className="toggle-buttons">
+                        <button
+                            className={activeForm === "agency" ? "active" : ""}
+                            onClick={() => handleFormChange("agency")}
+                        >
+                            Agency
+                        </button>
+                        <button
+                            className={activeForm === "thirdParty" ? "active" : ""}
+                            onClick={() => handleFormChange("thirdParty")}
+                        >
+                            Third Party
+                        </button>
+                        <button
+                            className={activeForm === "self" ? "active" : ""}
+                            onClick={() => handleFormChange("self")}
+                        >Self
+                        </button>
                     </div>
-                    <div className="mb-3">
-                        <label className="form-label">Vehicle Number</label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            name="vehicleNumber"
-                            value={vehicleData.vehicleNumber}
-                            onChange={handleChange}
-                        />
+
+                    <div className="form-container">
+                        <div className="form-main">
+
+                            {activeForm === "agency" && <Agency />}
+                            {activeForm === "thirdParty" && <ThirdParty />}
+                            {activeForm === "self" && <Self />}
+
+                        </div>
+                        <div className="add-new-car">
+                            <button className='add-car-btn' > <FaPlus className='add-car-icon' /> ADD NEW CAR </button>
+                        </div>
+
+                        <div className="submit-btn">
+                            <button type="submit" className="next-btn">Submit</button>
+                        </div>
                     </div>
-                    <button type="submit" className="btn btn-primary">
-                        Submit
-                    </button>
-                </form>
+                </div>
             </div>
         </>
     );

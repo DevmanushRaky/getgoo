@@ -1,121 +1,246 @@
 .home-img {
-  background-color: #7984ff;
+  background-color: #ebebfa;
   display: flex;
   align-content: center;
   justify-content: center;
   align-items: center;
 }
 
-.dull-text {
+.vehicle-heading {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.container-hero {
+  /* Frame 1 */
+  position: absolute;
+  width: 100%;
+  height: 290px;
+  left: 0px;
+  top: 0px;
+  background: rgba(93, 112, 254, 0.1);
+}
+
+.second-img {
+  margin-left: -62%;
+  z-index: -1;
+  height: 325px;
+}
+
+.first-img {
+  z-index: 999;
+  background-color: transparent;
+}
+
+.col-md-6 form input {
+  border-radius: 10px;
+}
+
+.col-md-6 form input[type="text"],
+.col-md-6 form input[type="email"] {
+  height: 54px;
+}
+
+.upload-buttons {
+  height: 37;
+  width: 105;
+  border-radius: 10px;
+  background-color: #ebebeb;
+  border: none;
+  padding: 10px 30px;
   font-size: 15px;
-  color: #666;
-}
-
-.input-name {
   font-weight: 500;
-  padding: 5px;
 }
 
-.upload-common-img {
-  border-radius: 7px;
-  padding: 3px 13px 3px 13px;
-  background-color: rgb(126 126 126 / 20%);
-  color: black;
-}
 .next-btn {
-  display: flex;
-  justify-content: right;
-}
-/* Top Upload image  */
-
-.file-input-container {
+  width: 149px;
+  height: 54px;
+  background-color: #314aff;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  font-size: 18px;
   position: relative;
-  width: 100%;
-  height: 200px;
-  border: 2px dashed #ccc;
+  float: right;
+}
+
+@media (max-width: 1024px) {
+  .container-hero {
+    height: 200px;
+  }
+
+  .second-img {
+    margin-left: -50%;
+    height: 250px;
+    width: 100%;
+  }
+
+  .first-img {
+    height: 400px;
+  }
+
+  .vehicle-heading {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-hero {
+    height: 150px;
+  }
+
+  .second-img {
+    margin-left: -30%;
+    height: 200px;
+  }
+
+  .first-img {
+    height: 200px;
+    width: 100vw;
+  }
+
+  .vehicle-heading {
+    font-size: 16px;
+  }
+
+  .col-md-6 form input[type="text"],
+  .col-md-6 form input[type="email"] {
+    height: 45px;
+  }
+
+  .next-btn {
+    width: 120px;
+    height: 45px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 540px) {
+  .container-hero {
+    height: 120px;
+  }
+
+  .second-img {
+    margin-left: 0;
+    height: 150px;
+    margin-top: -45%;
+  }
+
+  .first-img {
+    height: 150px;
+    margin-left: -15%;
+  }
+
+  .vehicle-heading {
+    font-size: 14px;
+  }
+
+  .col-md-6 {
+    width: 100%;
+  }
+
+  .col-md-6 form input[type="text"],
+  .col-md-6 form input[type="email"] {
+    height: 40px;
+    width: 100%;
+  }
+
+  .next-btn {
+    width: 100px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .upload-buttons {
+    width: 80px;
+    height: 30px;
+    font-size: 12px;
+  }
+}
+
+.left-arrow {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  margin-left: 2px;
+  margin-right: 5px;
+}
+
+.toggle-forms-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-buttons {
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: #f8f8f8;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.file-input {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.top-img-overlay {
-  text-align: center;
-}
-
-.image-dimensions {
-  font-size: 14px;
-  color: #333;
-  margin-top: 10px;
-}
-
-.camera-icon {
-  font-size: 40px;
-}
-.upload-img {
-  font-weight: 500;
-  border-radius: 12px;
-  padding: 8px;
-  background-color: rgb(126 126 126 / 45%);
-}
-
-/* Aadhar image upload */
-.file-upload-wrapper {
   margin-bottom: 20px;
+  width: 90%;
 }
 
-.file-upload-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
+.toggle-buttons button {
+  margin: 0 10px;
 }
 
-.file-input-wrapper {
-  position: relative;
+.toggle-buttons {
   display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
   align-items: center;
-  justify-content: center;
+}
+
+.toggle-buttons button {
+  background-color: white;
+  border: none;
+  padding: 10px 30px;
+  margin: 0 5px;
   cursor: pointer;
-  margin-right: 10px;
-  margin-left: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 6px;
 }
 
-.upload-input {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  cursor: pointer;
+.toggle-buttons button.active {
+  background-color: #dcddfa;
+  color: black;
+  font-weight: 500;
+  border-radius: 6px;
+  font-size: 12px;
 }
 
-.overlay {
+.form-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-}
-
-.file-info {
-  display: flex;
+  width: 90%;
+  flex-direction: column;
   align-items: center;
 }
 
-.file-info span {
-  margin-right: 10px;
+.add-new-car {
+  width: 100%;
+  border: 1px solid #787878;
+  padding: 8px;
+  margin: 10px;
+  border-radius: 8px;
+
+  & .add-car-icon {
+    font-size: 15px;
+  }
+
+  & .add-car-btn {
+    color: black;
+        border: none;
+        background: none;
+        font-weight: 500;
+  }
+}
+.form-main {
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 10px;
+  width: 100%;
+  margin: 10px;
 }
 
-.btn-danger.btn-sm {
-  padding: 0 5px;
-  height: 25px;
-}
+
