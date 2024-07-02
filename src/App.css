@@ -1,17 +1,121 @@
-
-
-
-
-.home-img{
-      background-color: #7984ff;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
+.home-img {
+  background-color: #7984ff;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
+.dull-text {
+  font-size: 15px;
+  color: #666;
+}
 
-.vehicle-heading{
-    font-size: 20px;
-    font-weight: 500;
+.input-name {
+  font-weight: 500;
+  padding: 5px;
+}
+
+.upload-common-img {
+  border-radius: 7px;
+  padding: 3px 13px 3px 13px;
+  background-color: rgb(126 126 126 / 20%);
+  color: black;
+}
+.next-btn {
+  display: flex;
+  justify-content: right;
+}
+/* Top Upload image  */
+
+.file-input-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border: 2px dashed #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.file-input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.top-img-overlay {
+  text-align: center;
+}
+
+.image-dimensions {
+  font-size: 14px;
+  color: #333;
+  margin-top: 10px;
+}
+
+.camera-icon {
+  font-size: 40px;
+}
+.upload-img {
+  font-weight: 500;
+  border-radius: 12px;
+  padding: 8px;
+  background-color: rgb(126 126 126 / 45%);
+}
+
+/* Aadhar image upload */
+.file-upload-wrapper {
+  margin-bottom: 20px;
+}
+
+.file-upload-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.file-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.upload-input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+}
+
+.file-info span {
+  margin-right: 10px;
+}
+
+.btn-danger.btn-sm {
+  padding: 0 5px;
+  height: 25px;
 }

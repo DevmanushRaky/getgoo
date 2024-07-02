@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FaCamera } from "react-icons/fa";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -38,6 +39,14 @@ const Home = () => {
     navigate('/vehicle');
   };
 
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    setFormData((prevData) => ({
+      ...prevData,
+      image: file,
+    }));
+  };
+
   return (
     <>
       <div className="container-fluid home-img">
@@ -59,16 +68,28 @@ const Home = () => {
         </p>
         <p className="py-3">Please read the following carefully:</p>
         {/* Owner Information form */}
-        <form onSubmit={handleSubmit} className="container mt-4">
-          <div className="mb-3">
+        <form onSubmit={handleSubmit} className="container my-4">
+          <div className="file-input-container">
             <input
               type="file"
-              className="form-control"
+              className="file-input"
               name="image"
-              onChange={handleChange}
+              onChange={handleImageChange}
             />
-            <p>Upload Photo <span> (max size 10mb) </span></p>
+            <div className="top-img-overlay">
+              <FaCamera className='camera-icon' />
+              <p className='my-3'><span className="upload-img ">UPLOAD </span></p>
+              <p className="dull-text">Accepts images (.jpeg, .png, .jpg format)</p>
+              {formData.image && (
+                <p className="image-dimensions">
+                  {formData.image.name}
+                </p>
+              )}
+            </div>
           </div>
+
+          <p className='py-2 input-name'>Upload Photo<span className="dull-text"> (max size 10mb)</span></p>
+
           <div className="mb-3">
             <input
               type="text"
@@ -90,7 +111,7 @@ const Home = () => {
             />
           </div>
           <div className="mb-3">
-            <p>ADDRESS</p>
+            <p className='input-name'>ADDRESS</p>
             <input
               type="text"
               className="form-control"
@@ -141,7 +162,7 @@ const Home = () => {
           <div className="row">
             <div className="col-md-6">
               <div className="mb-3">
-                <label className="form-label">Phone Number (+91)</label>
+                <label className="form-label input-name">Phone Number (+91)</label>
                 <input
                   type="text"
                   className="form-control"
@@ -153,7 +174,7 @@ const Home = () => {
             </div>
             <div className="col-md-6">
               <div className="mb-3">
-                <label className="form-label">Alternate Phone Number</label>
+                <label className="form-label input-name">Alternate Phone Number</label>
                 <input
                   type="text"
                   className="form-control"
@@ -165,67 +186,76 @@ const Home = () => {
             </div>
           </div>
           <div className="row">
-            <div className="col-md-6">
+            <div className="col-md-12">
               <div className="mb-3">
-                <p>UPLOAD AADHAR <span> (max size 10mb) </span></p>
-                <label className="form-label">Front Image</label>
-                <input
-                  type="file"
-                  className="form-control"
-                  name="aadharFront"
-                  onChange={handleChange}
-                />
+                <p className='input-name'>UPLOAD AADHAR <span className='dull-text'> (max size 10mb) </span></p>
+                <div className="file-upload-wrapper">
+                  <div className="file-upload-container">
+                  <label className="form-label input-name">Front Photo</label>
+                    <div className="file-input-wrapper">
+                      <input
+                        type="file"
+                        className="upload-input"
+                        name="aadharFront"
+                        onChange={handleChange}
+                      />
+                      <div className="overlay">
+                        <span className="upload-common-img">UPLOAD</span>
+                      </div>
+                    </div>
+                    {formData.aadharFront && (
+                      <div className="file-info">
+                        <span>{formData.aadharFront.name}</span>
+                        <button
+                          type="button"
+                          className="btn btn-outline-dark btn-sm"
+                          onClick={() => handleRemoveImage('aadharFront')}
+                        >
+                          x
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                </div>
               </div>
+
               <div className="mb-3">
-                <label className="form-label">Back Image</label>
-                <input
-                  type="file"
-                  className="form-control"
-                  name="aadharBack"
-                  onChange={handleChange}
-                />
+                <div className="file-upload-wrapper">
+                  <div className="file-upload-container">
+                <label className="form-label input-name">Back Photo</label>
+                    <div className="file-input-wrapper">
+                      <input
+                        type="file"
+                        className="upload-input"
+                        name="aadharBack"
+                        onChange={handleChange}
+                      />
+                      <div className="overlay">
+                        <span className="upload-common-img">UPLOAD</span>
+                      </div>
+                    </div>
+                    {formData.aadharBack && (
+                      <div className="file-info">
+                        <span>{formData.aadharBack.name}</span>
+                        <button
+                          type="button"
+                          className="btn btn-outline-dark btn-sm"
+                          onClick={() => handleRemoveImage('aadharBack')}
+                        >
+                          x
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="col-md-6">
-              {formData.aadharFront && (
-                <div className="mb-3">
-                  {/*   <p>{formData.aadharFront.name}</p> */}
-                  <img
-                    src={URL.createObjectURL(formData.aadharFront)}
-                    alt="Aadhar Front"
-                    className="img-thumbnail"
-                  />
-                  <button
-                    type="button"
-                    className="btn btn-danger mt-2"
-                    onClick={() => handleRemoveImage('aadharFront')}
-                  >
-                    Delete Front
-                  </button>
-                </div>
-              )}
-              {formData.aadharBack && (
-                <div className="mb-3">
-                  {/*   <p>{formData.aadharBack.name}</p> */}
-                  <img
-                    src={URL.createObjectURL(formData.aadharBack)}
-                    alt="Aadhar Back"
-                    className="img-thumbnail"
-                  />
-                  <button
-                    type="button"
-                    className="btn btn-danger mt-2"
-                    onClick={() => handleRemoveImage('aadharBack')}
-                  >
-                    Delete Back
-                  </button>
-                </div>
-              )}
             </div>
           </div>
-          <button type="submit" className="btn btn-primary">
-            Next
-          </button>
+
+
+          <div className='next-btn'>
+            <button type="submit" className="btn btn-primary px-5 py-2">Next</button>
+          </div>
         </form>
       </div>
     </>
