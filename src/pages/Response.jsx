@@ -151,11 +151,12 @@ const Response = () => {
               right: "auto",
               bottom: "auto",
               marginRight: "-50%",
+              height: "649px",
+              width: "700px",
               backgroundColor: "#FFFFFF",
               transform: "translate(-50%, -50%)",
               display: "flex",
               flexDirection: "column",
-              marginBottom: "20rem",
             },
             overlay: {
               zIndex: 1000,
@@ -250,14 +251,6 @@ const Response = () => {
           </div>
         </Modal>
       </div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
     </>
   );
 };
