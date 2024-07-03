@@ -1,18 +1,18 @@
 import { useRef, useState } from "react";
 
-export const ThirdParty =  () => {
+export const ThirdParty = () => {
   const [formData, setFormData] = useState({
-    vehicleName: '',
-    vehicleType: '',
-    vehicleModel: '',
-    vehicleFuelType: '',
-    vehicleInsuranceType: '',
-    engineType: '',
-    luggageType: '',
-    chassisNumber: '',
+    vehicleName: "",
+    vehicleType: "",
+    vehicleModel: "",
+    vehicleFuelType: "",
+    vehicleInsuranceType: "",
+    engineType: "",
+    luggageType: "",
+    chassisNumber: "",
     drivingLicence: null,
     carRegistration: null,
-    carInsurance: null
+    carInsurance: null,
   });
 
   const fileInputRefDrivingLicence = useRef(null);
@@ -27,14 +27,14 @@ export const ThirdParty =  () => {
     const { name, files } = e.target;
     setFormData({
       ...formData,
-      [name]: files[0]
+      [name]: files[0],
     });
   };
 
   const handleRemoveImage = (name) => {
     setFormData({
       ...formData,
-      [name]: null
+      [name]: null,
     });
   };
 
@@ -82,7 +82,6 @@ export const ThirdParty =  () => {
       </div>
 
       <div className="row">
-
         <div className="col-md-6">
           <div className="mb-3">
             <label>
@@ -113,23 +112,20 @@ export const ThirdParty =  () => {
               className="form-control"
               name="vehicleModel"
               value={formData.vehicleModel}
-              onChange={handleChange}>
+              onChange={handleChange}
+            >
               <option value=""> </option>
               <option value="SUV">Maruti suzki Swift</option>
               <option value="UV">TATA</option>
               <option value="Van">BOLERO</option>
-
-
             </select>
           </div>
         </div>
       </div>
 
       <div className="row">
-
         <div className="col-md-6">
           <div className="mb-3">
-
             <label>
               Engine Type<sup className="text-danger">*</sup>
             </label>
@@ -152,7 +148,6 @@ export const ThirdParty =  () => {
         </div>
         <div className="col-md-6">
           <div className="mb-3">
-
             <label>
               Insurance Type<sup className="text-danger">*</sup>
             </label>
@@ -173,10 +168,8 @@ export const ThirdParty =  () => {
       </div>
 
       <div className="row">
-
         <div className="col-md-6">
           <div className="mb-3">
-
             <label>
               Chassis Number<sup className="text-danger">*</sup>
             </label>
@@ -192,7 +185,6 @@ export const ThirdParty =  () => {
         </div>
         <div className="col-md-6">
           <div className="mb-3">
-
             <label>
               Luggage Type<sup className="text-danger">*</sup>
             </label>
@@ -200,26 +192,39 @@ export const ThirdParty =  () => {
             <input
               type="text"
               className="form-control"
-              placeholder='No. of bag'
+              placeholder="No. of bag"
               name="luggageType"
               value={formData.luggageType}
               onChange={handleChange}
-
             />
           </div>
         </div>
       </div>
-
 
       {/* Documents  */}
       {/* Driving Licence */}
       <div className="row">
         <div className="col-md-12">
           <div className="mb-3">
-            <p><b>UPLOAD DOCUMENT</b></p>
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-              <label className="form-label"><b>Driving Licence</b><sup className="text-danger">*</sup></label>
-              <button type="button" className="upload-buttons" onClick={() => handleButtonClick(fileInputRefDrivingLicence)}>
+            <p>
+              <b>UPLOAD DOCUMENT</b>
+            </p>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
+            >
+              <label className="form-label">
+                <b>Driving Licence</b>
+                <sup className="text-danger">*</sup>
+              </label>
+              <button
+                type="button"
+                className="upload-buttons"
+                onClick={() => handleButtonClick(fileInputRefDrivingLicence)}
+              >
                 UPLOAD
               </button>
               <input
@@ -232,11 +237,24 @@ export const ThirdParty =  () => {
               />
               <div className="col-md-4">
                 {formData.drivingLicence && (
-                  <div style={{ marginLeft: 10, display: "flex", alignItems: "center", justifyContent: "space-between", border: "1px solid #A1A1A1", padding: "5px 25px" }}>
+                  <div
+                    style={{
+                      marginLeft: 10,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      border: "1px solid #A1A1A1",
+                      padding: "5px 25px",
+                    }}
+                  >
                     <span>{formData.drivingLicence.name}</span>
                     <button
                       type="button"
-                      style={{ marginLeft: 5, backgroundColor: "transparent", border: "none" }}
+                      style={{
+                        marginLeft: 5,
+                        backgroundColor: "transparent",
+                        border: "none",
+                      }}
                       onClick={() => handleRemoveImage("drivingLicence")}
                     >
                       X
@@ -253,9 +271,22 @@ export const ThirdParty =  () => {
       <div className="row">
         <div className="col-md-12">
           <div className="mb-3">
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-              <label className="form-label"><b>Car Registration</b><sup className="text-danger">*</sup></label>
-              <button type="button" className="upload-buttons" onClick={() => handleButtonClick(fileInputRefCarRegistration)}>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
+            >
+              <label className="form-label">
+                <b>Car Registration</b>
+                <sup className="text-danger">*</sup>
+              </label>
+              <button
+                type="button"
+                className="upload-buttons"
+                onClick={() => handleButtonClick(fileInputRefCarRegistration)}
+              >
                 UPLOAD
               </button>
               <input
@@ -268,11 +299,24 @@ export const ThirdParty =  () => {
               />
               <div className="col-md-4">
                 {formData.carRegistration && (
-                  <div style={{ marginLeft: 10, display: "flex", alignItems: "center", justifyContent: "space-between", border: "1px solid #A1A1A1", padding: "5px 25px" }}>
+                  <div
+                    style={{
+                      marginLeft: 10,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      border: "1px solid #A1A1A1",
+                      padding: "5px 25px",
+                    }}
+                  >
                     <span>{formData.carRegistration.name}</span>
                     <button
                       type="button"
-                      style={{ marginLeft: 5, backgroundColor: "transparent", border: "none" }}
+                      style={{
+                        marginLeft: 5,
+                        backgroundColor: "transparent",
+                        border: "none",
+                      }}
                       onClick={() => handleRemoveImage("carRegistration")}
                     >
                       X
@@ -289,9 +333,21 @@ export const ThirdParty =  () => {
       <div className="row">
         <div className="col-md-12">
           <div className="mb-3">
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-              <label className="form-label"><b>Car Insurance </b> <sup className="text-danger">*</sup></label>
-              <button type="button" className="upload-buttons" onClick={() => handleButtonClick(fileInputRefCarInsurance)}>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
+            >
+              <label className="form-label">
+                <b>Car Insurance </b> <sup className="text-danger">*</sup>
+              </label>
+              <button
+                type="button"
+                className="upload-buttons"
+                onClick={() => handleButtonClick(fileInputRefCarInsurance)}
+              >
                 UPLOAD
               </button>
               <input
@@ -304,11 +360,24 @@ export const ThirdParty =  () => {
               />
               <div className="col-md-4">
                 {formData.carInsurance && (
-                  <div style={{ marginLeft: 10, display: "flex", alignItems: "center", justifyContent: "space-between", border: "1px solid #A1A1A1", padding: "5px 25px" }}>
+                  <div
+                    style={{
+                      marginLeft: 10,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      border: "1px solid #A1A1A1",
+                      padding: "5px 25px",
+                    }}
+                  >
                     <span>{formData.carInsurance.name}</span>
                     <button
                       type="button"
-                      style={{ marginLeft: 5, backgroundColor: "transparent", border: "none" }}
+                      style={{
+                        marginLeft: 5,
+                        backgroundColor: "transparent",
+                        border: "none",
+                      }}
                       onClick={() => handleRemoveImage("carInsurance")}
                     >
                       X
@@ -320,8 +389,6 @@ export const ThirdParty =  () => {
           </div>
         </div>
       </div>
-
-
     </form>
   );
 };
