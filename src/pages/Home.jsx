@@ -73,13 +73,13 @@ const Home = () => {
             justifyContent: "center",
           }}
         >
-          <div style={{ width: 1015, paddingTop: 50 }}>
+          <div className='home-text'>
             <p className="py-3">
               Thank you for choosing to register with us. By filling out this
               form, you are taking the first step towards joining our community
               of cab drivers, cab owners, and vehicle rental partners.
             </p>
-            <p className="py-3">Please read the following carefully:</p>
+            <p className="py-1">Please read the following carefully:</p>
           </div>
         </div>
         <div className="row">

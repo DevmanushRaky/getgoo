@@ -1,18 +1,13 @@
-.home-img {
-  background-color: #ebebfa;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-}
-
 .vehicle-heading {
   font-size: 20px;
   font-weight: 500;
 }
 
+.home-text {
+  width: 100%;
+  margin-top: 15px;
+}
 .container-hero {
-  /* Frame 1 */
   position: absolute;
   width: 100%;
   height: 290px;
@@ -32,6 +27,33 @@
   background-color: transparent;
 }
 
+@media (max-width: 768px) {
+  .container-hero {
+    height: auto;
+  }
+
+  .first-img,
+  .second-img {
+    margin-left: 0;
+    z-index: auto;
+    width: 100%;
+    height: auto;
+  }
+
+  .first-img {
+    margin-bottom: 20px; /* Optional: Add some space between the images */
+  }
+  .home-text {
+    margin-top: 161px;
+  }
+}
+
+@media (max-width: 500px) {
+  .home-text {
+    margin-top: 40px;
+  }
+}
+
 .col-md-6 form input {
   border-radius: 10px;
 }
@@ -42,12 +64,12 @@
 }
 
 .upload-buttons {
-  height: 37;
-  width: 105;
+  height: 37px;
+  width: 105px;
   border-radius: 10px;
   background-color: #ebebeb;
   border: none;
-  padding: 10px 30px;
+  padding: 7px 17px;
   font-size: 15px;
   font-weight: 500;
 }
@@ -65,40 +87,12 @@
 }
 
 @media (max-width: 1024px) {
-  .container-hero {
-    height: 200px;
-  }
-
-  .second-img {
-    margin-left: -50%;
-    height: 250px;
-    width: 100%;
-  }
-
-  .first-img {
-    height: 400px;
-  }
-
   .vehicle-heading {
     font-size: 18px;
   }
 }
 
 @media (max-width: 768px) {
-  .container-hero {
-    height: 150px;
-  }
-
-  .second-img {
-    margin-left: -30%;
-    height: 200px;
-  }
-
-  .first-img {
-    height: 200px;
-    width: 100vw;
-  }
-
   .vehicle-heading {
     font-size: 16px;
   }
@@ -116,21 +110,6 @@
 }
 
 @media (max-width: 540px) {
-  .container-hero {
-    height: 120px;
-  }
-
-  .second-img {
-    margin-left: 0;
-    height: 150px;
-    margin-top: -45%;
-  }
-
-  .first-img {
-    height: 150px;
-    margin-left: -15%;
-  }
-
   .vehicle-heading {
     font-size: 14px;
   }
@@ -138,24 +117,24 @@
   .col-md-6 {
     width: 100%;
   }
+}
 
-  .col-md-6 form input[type="text"],
-  .col-md-6 form input[type="email"] {
-    height: 40px;
-    width: 100%;
-  }
+.col-md-6 form input[type="text"],
+.col-md-6 form input[type="email"] {
+  height: 40px;
+  width: 100%;
+}
 
-  .next-btn {
-    width: 100px;
-    height: 40px;
-    font-size: 14px;
-  }
+.next-btn {
+  width: 100px;
+  height: 40px;
+  font-size: 14px;
+}
 
-  .upload-buttons {
-    width: 80px;
-    height: 30px;
-    font-size: 12px;
-  }
+.upload-buttons {
+  width: 80px;
+  height: 30px;
+  font-size: 12px;
 }
 
 .left-arrow {
@@ -230,9 +209,9 @@
 
   & .add-car-btn {
     color: black;
-        border: none;
-        background: none;
-        font-weight: 500;
+    border: none;
+    background: none;
+    font-weight: 500;
   }
 }
 .form-main {
@@ -242,5 +221,3 @@
   width: 100%;
   margin: 10px;
 }
-
-
